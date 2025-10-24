@@ -1,10 +1,11 @@
 # Chest X-Ray Disease Classification using Deep Learning
 
-A machine learning model that classifies chest X-ray images into three categories: **Normal**, **Pneumonia**, and **Tuberculosis** using transfer learning with MobileNetV2.
+A machine learning model that classifies chest X-ray images into four categories: **Normal**, **COVID-19**, **Pneumonia**, and **Tuberculosis** using transfer learning with MobileNetV2.
 
 ![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.20-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Last Updated](https://img.shields.io/badge/last%20updated-October%202025-blue.svg)
 
 ## 🎯 Project Overview
 
@@ -12,12 +13,13 @@ This project implements a deep learning solution for automated chest X-ray disea
 
 ### Key Features
 
-- ✅ **3-class classification**: Normal, Pneumonia, Tuberculosis
+- ✅ **4-class classification**: Normal, COVID-19, Pneumonia, Tuberculosis
 - ✅ **Transfer learning**: Uses pre-trained MobileNetV2 for efficient training
 - ✅ **Data augmentation**: Improves model generalization
 - ✅ **Class imbalance handling**: Weighted loss function
 - ✅ **70-15-15 split**: Proper train/validation/test separation
 - ✅ **Comprehensive evaluation**: Precision, Recall, F1-Score, AUC-ROC
+- ✅ **COVID-19 detection**: Added support for COVID-19 classification
 
 ## 📊 Model Performance
 
