@@ -133,10 +133,22 @@ Dense(3, softmax)
 
 ## 🔬 Technical Details
 
+### Data Pipeline Architecture
+
+```
+Raw Images → Preprocessing → Augmentation → Model → Predictions
+     ↓            ↓              ↓           ↓         ↓
+  Dataset    Normalization   DataGenerator   CNN     Softmax
+```
+
 ### Data Preprocessing
 
 - Image resizing: 128×128 pixels
 - Normalization: Pixel values scaled to [0, 1]
+- RGB channel normalization
+- Optional histogram equalization
+- Maintains aspect ratio during resizing
+- Handles corrupt images gracefully
 - Augmentation: Rotation (±15°), shifts (±15%), zoom (±15%), horizontal flip, brightness adjustment
 
 ### Training Configuration
@@ -148,12 +160,38 @@ Dense(3, softmax)
 - **Class weights:** Applied for imbalanced data
 - **Callbacks:** EarlyStopping, ReduceLROnPlateau, ModelCheckpoint
 
+### Performance Optimization
+
+- Generator-based data loading
+- Batch processing for large datasets
+- Efficient CPU/GPU memory utilization
+- Learning rate scheduling
+- Gradient clipping
+- Mixed precision training
+- Model checkpointing
+
+### Hardware Requirements
+
+- Minimum: 8GB RAM, 4 cores CPU
+- Recommended: 16GB RAM, 8 cores CPU, GPU with 6GB VRAM
+- Optimal: 32GB RAM, NVIDIA RTX series GPU
+
+### Processing Times
+
+| Operation         | CPU Time  | GPU Time |
+| ----------------- | --------- | -------- |
+| Training (epoch)  | 25-30 min | 3-5 min  |
+| Inference (image) | 2-3 sec   | <1 sec   |
+| Full Training     | 16-20 hrs | 2-3 hrs  |
+
 ### Evaluation Metrics
 
 - Accuracy, Precision, Recall, F1-Score
 - AUC-ROC (Area Under ROC Curve)
 - Confusion Matrix
 - Per-class performance analysis
+- Model interpretability with Grad-CAM
+- LIME and SHAP value analysis
 
 ## 📊 Visualizations
 
