@@ -5,7 +5,7 @@ A machine learning model that classifies chest X-ray images into four categories
 ![Python](https://img.shields.io/badge/python-3.9+-blue.svg)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.20-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
-![Last Updated](https://img.shields.io/badge/last%20updated-October%202025-blue.svg)
+![Last Updated](https://img.shields.io/badge/last%20updated-November%204%2C%202025-blue.svg)
 
 ## 🎯 Project Overview
 
@@ -53,7 +53,24 @@ This project implements a deep learning solution for automated chest X-ray disea
    cd ml_chestxray
 
 2. **Install dependencies**
-   pip install tensorflow numpy matplotlib seaborn pandas scikit-learn pillow
+   pip install -r requirements.txt
+
+### Quick start
+
+Use a virtual environment (recommended). Example commands for Windows PowerShell:
+
+```powershell
+python -m venv .venv
+# Activate the venv in PowerShell
+. .\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+If you prefer a single-line install without a venv (not recommended):
+
+```powershell
+pip install tensorflow numpy matplotlib seaborn pandas scikit-learn pillow
+```
 
 3. **Download the dataset**
 
@@ -93,6 +110,21 @@ python evaluate_model.py
 ### Predicting Single Images
 
 python predict_single.py path/to/xray_image.jpg
+
+### How to run (quick commands)
+
+Here are the common commands you'll use during development. Run these from the project root (after activating the virtual environment):
+
+```powershell
+# Train the model (uses config in train_model.py)
+python train_model.py
+
+# Evaluate the saved model on the test set
+python evaluate_model.py
+
+# Predict a single image
+python predict_single.py path/to/xray_image.jpg
+```
 
 ## 📁 Project Structure
 
